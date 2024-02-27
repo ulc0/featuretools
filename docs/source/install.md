@@ -1,6 +1,6 @@
 # Install
 
-Featuretools is available for Python 3.7, 3.8, 3.9, and 3.10. It can be installed from [pypi](https://pypi.org/project/featuretools/), [conda-forge](https://anaconda.org/conda-forge/featuretools), or from [source](https://github.com/alteryx/featuretools).
+Featuretools is available for Python 3.9 - 3.11. It can be installed from [pypi](https://pypi.org/project/featuretools/), [conda-forge](https://anaconda.org/conda-forge/featuretools), or from [source](https://github.com/alteryx/featuretools).
 
 To install Featuretools, run the following command:
 
@@ -29,13 +29,9 @@ Be sure to install [Scala and Spark](#scala-and-spark) if you want to use Spark
 ```console
 $ python -m pip install "featuretools[complete]"
 ```
-```{tab} Premium Primitives
+```{tab} Dask
 ```console
-$ python -m pip install "featuretools[premium]"
-```
-```{tab} NLP Primitives
-```console
-$ python -m pip install "featuretools[nlp]"
+$ python -m pip install "featuretools[dask]"
 ```
 ```{tab} Spark
 ```console
@@ -67,13 +63,13 @@ $ python -m pip install "featuretools[sklearn]"
 ```console
 $ conda install -c conda-forge nlp-primitives featuretools-tsfresh-primitives pyspark alteryx-open-src-update-checker
 ```
-```{tab} NLP Primitives
-```console
-$ conda install -c conda-forge nlp-primitives
-```
 ```{tab} TSFresh Primitives
 ```console
 $ conda install -c conda-forge featuretools-tsfresh-primitives
+```
+```{tab} Dask
+```console
+$ conda install -c conda-forge dask distributed
 ```
 ```{tab} Spark
 ```console
@@ -91,6 +87,7 @@ $ conda install -c conda-forge alteryx-open-src-update-checker
 
 - **NLP Primitives**: Use Natural Language Processing Primitives in Featuretools
 - **TSFresh Primitives**: Use 60+ primitives from [tsfresh](https://tsfresh.readthedocs.io/en/latest/) in Featuretools
+- **Dask**: Use Woodwork with Dask DataFrames and run `calculate_feature_matrix` in parallel with `n_jobs`
 - **Spark**: Use Woodwork with Spark DataFrames
 - **AutoNormalize**: Automated creation of normalized `EntitySet` from denormalized data
 - **Update Checker**: Receive automatic notifications of new Featuretools releases
@@ -143,7 +140,7 @@ If you installed graphviz for **Windows** with `pip`, install graphviz.exe from 
 
 ## Source
 
-To install Featuretools from source, clone the repository from [Github](https://github.com/alteryx/featuretools), and install the dependencies.
+To install Featuretools from source, clone the repository from [GitHub](https://github.com/alteryx/featuretools), and install the dependencies.
 
 ```{hint}
 Be sure to install [Scala and Spark](#scala-and-spark) if you want to run all unit tests
@@ -200,7 +197,7 @@ You can do so by installing it as a package inside a container (following the no
 creating a new image with Featuretools pre-installed, using the following commands in your `Dockerfile`:
 
 ```dockerfile
-FROM --platform=linux/x86_64 python:3.8-slim-buster
+FROM --platform=linux/x86_64 python:3.9-slim-buster
 RUN apt update && apt -y update
 RUN apt install -y build-essential
 RUN pip3 install --upgrade --quiet pip

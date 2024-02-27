@@ -28,17 +28,6 @@ Deep Feature Synthesis
     dfs
     get_valid_primitives
 
-Wrappers
-~~~~~~~~
-.. currentmodule:: featuretools
-
-scikit-learn (BETA)
--------------------
-.. autosummary::
-    :toctree: generated/
-
-    wrappers.DFSTransformer
-
 Timedelta
 ~~~~~~~~~
 .. currentmodule:: featuretools
@@ -321,36 +310,6 @@ Time Series Transform Primitives
     RollingOutlierCount
     RollingSTD
     RollingTrend
-
-
-.. currentmodule:: nlp_primitives
-
-.. autosummary::
-   :nosignatures:
-
-Natural Language Processing Primitives
---------------------------------------
-Natural Language Processing primitives create features for textual data. For more information on how to use and install these primitives, see `here <https://github.com/alteryx/nlp_primitives>`__.
-
-Primitives in standard install
-******************************
-.. autosummary::
-    :toctree: generated/
-
-    DiversityScore
-    LSA
-    PartOfSpeechCount
-    PolarityScore
-    StopwordCount
-
-Primitives that require installing tensorflow
-*********************************************
-.. currentmodule:: nlp_primitives.tensorflow
-.. autosummary::
-    :toctree: generated/
-
-    Elmo
-    UniversalSentenceEncoder
 
 
 Feature methods
